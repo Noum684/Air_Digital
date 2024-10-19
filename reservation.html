@@ -10,7 +10,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/logo1.png" alt="Air Digital Logo" width="150"> 
+                <img src="images/logos2.png" alt="Air Digital Logo" width="150"> 
             </a>
         </div>
         <ul class="menu">
@@ -28,37 +28,91 @@
     </header>
     
     <section id="reservation">
-        <h1 class="title">Réserver un Vol</h1>
-        <form action="reservation.php" method="post">
-            <label for="name">Prénom</label>
-            <input type="text" name="prenom" required>
-            <label for="name">Nom</label>
-            <input type="text" name="nom" required>
+        <h1 class="title">Réservez votre voyage</h1>
+        <div class="reservation-options">
+            <!-- Réservation de Vols -->
+            <div class="box">
+                <h3>Réservez vos Vols</h3>
+                <p>Profitez des meilleures offres pour vos vols internationaux ou domestiques avec Air Digital.</p>
+                <form action="">
+                    <form action="reservation.php" method="post">
+                        <label for="name">Prénom</label>
+                        <input type="text" name="prenom" required>
+                        <label for="name">Nom</label>
+                        <input type="text" name="nom" required>
+            
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+            
+                        <label for="destination">Destination</label>
+                        <select name="destination" required>
+                            <option value="paris">Paris</option>
+                            <option value="new-york">New York</option>
+                            <option value="montreal">Montréal</option>
+                            <option value="tokyo">Tokyo</option>
+                            <option value="seoul">Seoul</option>
+                        </select>
+                    <label>Destination</label>
+                    <input type="text" placeholder="Entrez votre destination">
+                    <label>Date de départ</label>
+                    <input type="date">
+                    <label>Date de retour</label>
+                    <input type="date">
+                    <label>Prix (à partir de)</label>
+                    <p><strong>300000FCFA</strong></p><br/>
+                    <input type="submit" value="Réserver un vol">
+                </form>
+            </div>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" required>
+            <!-- Réservation d'Hébergements -->
+            <div class="box">
+                <h3>Réservez vos Hébergements</h3>
+                <p>Nous vous aidons à trouver les meilleurs hôtels, auberges ou appartements adaptés à votre budget.</p>
+                <form action="">
+                    <form action="reservation.php" method="post">
+                        <label for="name">Prénom</label>
+                        <input type="text" name="prenom" required>
+                        <label for="name">Nom</label>
+                        <input type="text" name="nom" required>
+            
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+                    <label>Ville</label>
+                    <input type="text" placeholder="Entrez votre ville de destination">
+                    <label>Date d'arrivée</label>
+                    <input type="date">
+                    <label>Date de départ</label>
+                    <input type="date">
+                    <label>Prix (par nuit, à partir de)</label>
+                    <p><strong>50000FCFA</strong></p><br/>
+                    <input type="submit" value="Réserver un hébergement">
+                </form>
+            </div>
 
-            <label for="destination">Destination</label>
-            <select name="destination" required>
-                <option value="paris">Paris</option>
-                <option value="new-york">New York</option>
-                <option value="montreal">Montréal</option>
-                <option value="tokyo">Tokyo</option>
-                <option value="seoul">Seoul</option>
-            </select>
-
-            <label for="date">Date de départ</label>
-            <input type="date" name="datedeb" required>
-            <label for="date">Date de rétour</label>
-            <input type="date" name="datefn" required>
-
-            <label for="passengers">Nombre de passagers</label>
-            <input type="number" name="passengers" required min="1">
-
-            <button type="submit">Réserver</button>
-        </form>
+            <!-- Réservation d'Activités Touristiques -->
+            <div class="box">
+                <h3>Réservez vos Activités Touristiques</h3>
+                <p>Choisissez parmi une variété d'activités : visites guidées, expériences culinaires, excursions, et plus encore.</p>
+                <form action="">
+                    <form action="reservation.php" method="post">
+                        <label for="name">Prénom</label>
+                        <input type="text" name="prenom" required>
+                        <label for="name">Nom</label>
+                        <input type="text" name="nom" required>
+            
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required>
+                    <label>Activité</label>
+                    <input type="text" placeholder="Entrez une activité (ex. Safari, Visite de musée)">
+                    <label>Date de l'activité</label>
+                    <input type="date">
+                    <label>Prix (à partir de)</label>
+                    <p><strong>20000FCFA</strong></p><br/>
+                    <input type="submit" value="Réserver une activité">
+                </form>
+            </div>
+        </div>
     </section>
-
     <footer>
         <p> Réalisé par <span>Femme et Digital</span> | Tous les droits sont réservés.</p>
     </footer>

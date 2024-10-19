@@ -165,6 +165,168 @@ header  .logo a span {
 .find_trip form input[type="submit"]:hover {
     box-shadow: 0 0 10px #29d9d5;
 }
+#connexion,
+#inscription {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc avec transparence */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement intérieur */
+    max-width: 400px; /* Largeur maximale */
+    margin: auto; /* Centrage horizontal */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.title {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+    font-family: 'Arial', sans-serif; /* Police d'écriture */
+    font-size: 24px; /* Taille de la police */
+    color: #333; /* Couleur du titre */
+}
+
+/* Styles des champs de formulaire, identiques au formulaire de réservation */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Prendre toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Espacement sous chaque champ */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    transition: border-color 0.3s; /* Animation pour la bordure */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Bordure bleue sur focus */
+    outline: none; /* Supprimer le contour par défaut */
+}
+
+/* Styles du bouton, identiques au formulaire de réservation */
+button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte */
+    padding: 10px 15px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+    font-size: 16px; /* Taille de la police */
+    transition: background-color 0.3s; /* Animation de couleur */
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Réservation CSS */
+/* Réservation CSS */
+#reservation {
+    padding: 50px 10%;
+    background-color: #1e1e1e; /* Couleur de fond pour la section */
+    color: #fff; /* Couleur du texte */
+}
+
+#reservation .title {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 30px; /* Espacement en bas du titre */
+    font-size: 4.5rem; /* Taille du titre */
+    color: #29d9d5; /* Couleur du titre */
+}
+
+.reservation-options {
+    display: grid; /* Utiliser une grille pour la disposition des options */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Créer des colonnes adaptatives */
+    gap: 32px; /* Espacement entre les options */
+}
+
+.box {
+    background-color: #222; /* Couleur de fond pour chaque option */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre */
+    transition: 0.3s; /* Transition pour l'effet de survol */
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Légère élévation lors du survol */
+    box-shadow: 0 0 20px rgba(0, 217, 213, 0.7); /* Ombre plus prononcée */
+}
+
+.box h3 {
+    color: #29d9d5; /* Couleur du titre de l'option */
+    margin-bottom: 10px; /* Espacement en bas du titre */
+}
+
+.box p {
+    color: #999; /* Couleur du texte descriptif */
+    margin-bottom: 15px; /* Espacement en bas du texte descriptif */
+}
+
+.box form {
+    display: flex; /* Utiliser flexbox pour le formulaire */
+    flex-direction: column; /* Orientation verticale */
+}
+
+.box form label {
+    margin-top: 10px; /* Espacement supérieur */
+    color: #999; /* Couleur des labels */
+    font-size: 1.9em;
+}
+
+.box form input[type="text"],
+.box form input[type="date"] {
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #29d9d5; /* Bordure de couleur */
+    border-radius: 4px; /* Coins arrondis */
+    outline: none; /* Supprimer le contour par défaut */
+    background-color: transparent; /* Fond transparent */
+    color: #fff; /* Couleur du texte */
+    margin-bottom: 10px; /* Espacement en bas des champs */
+}
+
+.box form input[type="submit"] {
+    padding: 10px; /* Espacement intérieur */
+    background-color: #29d9d5; /* Couleur de fond pour le bouton */
+    border: none; /* Pas de bordure */
+    color: #fff; /* Couleur du texte */
+    cursor: pointer; /* Changer le curseur */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s; /* Transition pour la couleur de fond */
+}
+
+.box form input[type="submit"]:hover {
+    background-color: #22b5b2; /* Couleur de fond au survol */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    #reservation {
+        padding: 30px 5%; /* Réduire le padding sur les petits écrans */
+    }
+
+    h1.title {
+        font-size: 2rem; /* Réduire la taille du titre sur les petits écrans */
+    }
+}
+
+
+/*A propos CSS*/
+#a-propos {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 0 10%;
+    width: 100%;
+}
+.title {
+    text-transform: capitalize;
+    margin: 70px 0;
+    font-weight: bold;
+    color: #29d9d5;
+    position: relative;
+    margin-left:15px;
+    font-size: 18px;
+
+}
 .title::after {
     position: absolute;
     left: -15px;
@@ -224,276 +386,8 @@ header  .logo a span {
     padding: 8px 25px;
     font-weight: bold;
 }
-#reservation {
-    padding: 50px 10%;
-    background-color: #1e1e1e; /* Couleur de fond pour la section */
-    color: #fff; /* Couleur du texte */
-}
 
-.title {
-    text-align: center; /* Centrer le titre */
-    margin-bottom: 30px; /* Espacement en bas du titre */
-    font-size: 2.5rem; /* Taille du titre */
-    color: #29d9d5; /* Couleur du titre */
-}
-
-.reservation-options {
-    display: grid; /* Utiliser une grille pour la disposition des options */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Créer des colonnes adaptatives */
-    gap: 32px; /* Espacement entre les options */
-}
-
-.box {
-    background-color: #222; /* Couleur de fond pour chaque option */
-    padding: 20px; /* Espacement intérieur */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre */
-    transition: 0.3s; /* Transition pour l'effet de survol */
-}
-
-.box:hover {
-    transform: translateY(-5px); /* Légère élévation lors du survol */
-    box-shadow: 0 0 20px rgba(0, 217, 213, 0.7); /* Ombre plus prononcée */
-}
-
-.box h3 {
-    color: #29d9d5; /* Couleur du titre de l'option */
-    margin-bottom: 10px; /* Espacement en bas du titre */
-}
-
-.box p {
-    color: #999; /* Couleur du texte descriptif */
-    margin-bottom: 15px; /* Espacement en bas du texte descriptif */
-}
-
-.box form {
-    display: flex; /* Utiliser flexbox pour le formulaire */
-    flex-direction: column; /* Orientation verticale */
-}
-
-.box form label {
-    margin-top: 10px; /* Espacement supérieur */
-    color: #999; /* Couleur des labels */
-}
-
-.box form input[type="text"],
-.box form input[type="date"] {
-    padding: 10px; /* Espacement intérieur */
-    border: 1px solid #29d9d5; /* Bordure de couleur */
-    border-radius: 4px; /* Coins arrondis */
-    outline: none; /* Supprimer le contour par défaut */
-    background-color: transparent; /* Fond transparent */
-    color: #fff; /* Couleur du texte */
-    margin-bottom: 10px; /* Espacement en bas des champs */
-}
-
-.box form input[type="submit"] {
-    padding: 10px; /* Espacement intérieur */
-    background-color: #29d9d5; /* Couleur de fond pour le bouton */
-    border: none; /* Pas de bordure */
-    color: #fff; /* Couleur du texte */
-    cursor: pointer; /* Changer le curseur */
-    font-weight: bold; /* Texte en gras */
-    transition: background-color 0.3s; /* Transition pour la couleur de fond */
-}
-
-.box form input[type="submit"]:hover {
-    background-color: #22b5b2; /* Couleur de fond au survol */
-}
-/*A propos CSS*/
-#about {
-    padding: 50px 10%;
-    background-color: #f4f4f4; 
-    color: #333; 
-}
-
-.title {
-    margin-bottom: 30px; /* Espacement en bas du titre */
-    font-size: 4.5rem; /* Taille du titre */
-    color: #29d9d5; /* Couleur du titre */
-}
-
-.about-content {
-    max-width: 800px; /* Limiter la largeur pour le texte */
-    margin: 0 auto; /* Centrer le contenu */
-    line-height: 1.6; /* Espacement entre les lignes */
-    font-size: 2.1rem; /* Taille de la police */
-    text-align: justify; /* Justifier le texte */
-}
-
-.about-content p {
-    margin-bottom: 20px; /* Espacement entre les paragraphes */
-}
-/*Reservation CSS*/
-#reservation {
-    background-image: url('images/moscou.jpg'); /* Remplacez par le chemin de votre image */
-    background-size: cover; /* Remplit l'écran */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Évite la répétition */
-    margin: 0; /* Suppression de la marge par défaut */
-    color: #ffffff; /* Couleur du texte par défaut */
-    padding: 50px 10%;
-    background-color: #f8f9fa; /* Couleur de fond douce pour la section */
-    color: #333; /* Couleur du texte */
-    border-radius: 10px; /* Coins arrondis pour la section */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour le relief */
-}
-
-h1.title {
-    font-size: 4.5rem; /* Taille du titre */
-    color: #29d9d5; /* Couleur du titre */
-    margin-bottom: 30px; /* Espacement en bas du titre */
-    text-align: center; /* Centrer le titre */
-}
-
-form {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column; /* Disposition en colonne pour les éléments du formulaire */
-    gap: 10px; /* Espacement entre les éléments */
-}
-
-label {
-    font-weight: bold; /* Mettre les étiquettes en gras */
-    margin-bottom: 5px; /* Espacement en bas des étiquettes */
-    font-size: 2em;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-input[type="number"],
-select {
-    padding: 10px; /* Espacement intérieur */
-    border: 1px solid #ccc; /* Bordure grise claire */
-    border-radius: 5px; /* Coins arrondis pour les champs de formulaire */
-    font-size: 2rem; /* Taille de police standard */
-    transition: border-color 0.3s; /* Transition pour changement de couleur */
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus,
-input[type="number"]:focus,
-select:focus {
-    border-color: #29d9d5; /* Changer la couleur de la bordure au focus */
-    outline: none; /* Supprimer le contour par défaut */
-}
-
-button {
-    background-color: #29d9d5; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte du bouton */
-    padding: 10px; /* Espacement intérieur */
-    border: none; /* Supprimer la bordure */
-    border-radius: 5px; /* Coins arrondis pour le bouton */
-    font-size: 1.2rem; /* Taille de police du bouton */
-    cursor: pointer; /* Changer le curseur au survol */
-    transition: background-color 0.3s; /* Transition pour changement de couleur */
-}
-
-button:hover {
-    background-color: #24b0b0; /* Couleur plus foncée au survol */
-}
-/*Connexion et inscription CSS*/
-#connexion,
-#inscription {
-    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc avec transparence */
-    border-radius: 10px; /* Coins arrondis */
-    padding: 20px; /* Espacement intérieur */
-    max-width: 400px; /* Largeur maximale */
-    margin: auto; /* Centrage horizontal */
-    margin-top: 5%;
-    height: 70vh;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
-}
-
-.title {
-    text-align: center; /* Centrer le titre */
-    margin-bottom: 20px; /* Espacement sous le titre */
-    font-family: 'Arial', sans-serif; /* Police d'écriture */
-    font-size: 24px; /* Taille de la police */
-    color: #333; /* Couleur du titre */
-}
-
-/* Styles des champs de formulaire, identiques au formulaire de réservation */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%; /* Prendre toute la largeur */
-    padding: 10px; /* Espacement intérieur */
-    margin-bottom: 15px; /* Espacement sous chaque champ */
-    border: 1px solid #ccc; /* Bordure */
-    border-radius: 5px; /* Coins arrondis */
-    transition: border-color 0.3s; /* Animation pour la bordure */
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #007bff; /* Bordure bleue sur focus */
-    outline: none; /* Supprimer le contour par défaut */
-}
-
-/* Styles du bouton, identiques au formulaire de réservation */
-button {
-    background-color: #007bff; /* Couleur de fond bleue */
-    color: white; /* Couleur du texte */
-    padding: 10px 15px; /* Espacement intérieur */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Coins arrondis */
-    cursor: pointer; /* Curseur pointer */
-    font-size: 16px; /* Taille de la police */
-    transition: background-color 0.3s; /* Animation de couleur */
-}
-
-button:hover {
-    background-color: #0056b3; /* Couleur plus foncée au survol */
-}
 /*Destination CSS*/
-#destinations {
-    padding: 50px 10%;
-    background-color: #fff; /* Couleur de fond blanche pour la section */
-    color: #333; /* Couleur du texte */
-    text-align: center; /* Centrer le texte */
-    
-}
-
-h1 {
-    font-size: 2.5rem; /* Taille du titre principal */
-    color: #29d9d5; /* Couleur du titre */
-    margin-bottom: 30px; /* Espacement en bas du titre */
-}
-
-.carousel-inner img {
-    max-height: 600px; /* Hauteur maximale pour les images du carrousel */
-    object-fit: cover; /* Couvrir sans déformer l'image */
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour les légendes */
-    color: #fff; /* Couleur du texte des légendes */
-    padding: 10px 20px; /* Espacement intérieur des légendes */
-    border-radius: 5px; /* Coins arrondis pour les légendes */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #29d9d5; /* Couleur des icônes de contrôle */
-    border-radius: 50%; /* Arrondir les icônes */
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%; /* Largeur des contrôles */
-}
-
-/* Texte en dessous du carrousel */
-h2 {
-    font-size: 1.8rem; /* Taille du sous-titre */
-    margin-top: 20px; /* Espacement en haut du sous-titre */
-    color: #555; /* Couleur du texte */
-}
 #popular-destination {
     padding: 0 10% ;
     margin-bottom: 50px;
@@ -503,7 +397,6 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 32px;
 }
-
 #popular-destination .content .box {
     overflow: hidden;
     position: relative;
@@ -587,7 +480,6 @@ h2 {
     border: 1px solid #999;
 }
 
-
 textarea {
     height: 150px;
     resize: none;
@@ -651,18 +543,6 @@ footer p span {
     #home p {
         text-align: center;
         font-size: 10px;
-    }
-    #destinations h1{
-        font-size: 2rem;
-    }
-    #destinations h2{
-        font-size: 1.5rem;
-    }
-    #reservation {
-        padding: 30px 5%; 
-    }
-    #reservation h1.title {
-        font-size: 2rem; /* Réduire la taille du titre sur les petits écrans */
     }
     .find_trip {
         width: 100%;
