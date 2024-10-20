@@ -173,18 +173,19 @@ header  .logo a span {
     max-width: 400px; /* Largeur maximale */
     margin: auto; /* Centrage horizontal */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    margin-top: 10%;
 }
 
-.title {
+#connexion, #inscription .title {
     text-align: center; /* Centrer le titre */
     margin-bottom: 20px; /* Espacement sous le titre */
-    font-family: 'Arial', sans-serif; /* Police d'écriture */
-    font-size: 24px; /* Taille de la police */
+    font-family: 'Times New Roman', Times, serif; /* Police d'écriture */
+    font-size: 4em; /* Taille de la police */
     color: #333; /* Couleur du titre */
 }
 
 /* Styles des champs de formulaire, identiques au formulaire de réservation */
-input[type="text"],
+#connexion, #inscription input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%; /* Prendre toute la largeur */
@@ -195,7 +196,7 @@ input[type="password"] {
     transition: border-color 0.3s; /* Animation pour la bordure */
 }
 
-input[type="text"]:focus,
+#connexion, #inscription input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
     border-color: #007bff; /* Bordure bleue sur focus */
@@ -203,18 +204,19 @@ input[type="password"]:focus {
 }
 
 /* Styles du bouton, identiques au formulaire de réservation */
-button {
+#connexion, #inscription button {
     background-color: #007bff; /* Couleur de fond bleue */
     color: white; /* Couleur du texte */
     padding: 10px 15px; /* Espacement intérieur */
     border: none; /* Pas de bordure */
     border-radius: 5px; /* Coins arrondis */
     cursor: pointer; /* Curseur pointer */
-    font-size: 16px; /* Taille de la police */
+    font-size: 2em; /* Taille de la police */
+    font-family: 'Times New Roman', Times, serif;
     transition: background-color 0.3s; /* Animation de couleur */
 }
 
-button:hover {
+#connexion, #inscription  button:hover {
     background-color: #0056b3; /* Couleur plus foncée au survol */
 }
 

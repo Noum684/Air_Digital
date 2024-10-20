@@ -1,29 +1,29 @@
 <?php
-// Connexion à la base de données
-$conn = new mysqli('localhost', 'root', '', 'travel');
+session_start(); // Démarrer la session
+include('config.php'); // Inclusion de la connexion à la base de données
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// Récupérer les données du formulaire
-$email = $_POST['email'];
-$password = $_POST['password'];
+    // Vérifier si l'utilisateur existe
+    $sql = "SELECT * FROM utilisateurs WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':email' => $email]);
+    $user = $stmt->fetch();
 
-// Vérifier si l'utilisateur existe
-$sql = "SELECT * FROM users WHERE email='$email'";
-$result = $conn->query($sql);
+    if ($user && password_verify($password, $user['password'])) {
+        // Les identifiants sont corrects, on démarre une session
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['prenom'] = $user['prenom'];
+        $_SESSION['nom'] = $user['nom'];
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    if (password_verify($password, $row['password'])) {
-        echo "Connexion réussie!";
+        echo "Connexion réussie ! Bienvenue " . $_SESSION['prenom'];
+        // Rediriger vers une page protégée (ex: tableau de bord)
+        header("Location: index.php");
+        exit();
     } else {
-        echo "Mot de passe incorrect.";
+        echo "Email ou mot de passe incorrect.";
     }
-} else {
-    echo "Aucun utilisateur trouvé avec cet email.";
 }
-
-$conn->close();
 ?>
