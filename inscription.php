@@ -1,31 +1,26 @@
 <?php
-include('config.php'); // Inclusion de la connexion à la base de données
+session_start();
+include('database.php'); // Inclusion de la connexion à la base de données
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hachage du mot de passe
 
-    // Vérifier si l'email existe déjà
-    $sql = "SELECT * FROM utilisateurs WHERE email = :email";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':email' => $email]);
+    // Préparer la requête d'insertion
+    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $password);
 
-    if ($stmt->rowCount() > 0) {
-        echo "Cet email est déjà utilisé.";
+    if ($stmt->execute()) {
+        $_SESSION['message'] = "Inscription réussie! Vous pouvez maintenant vous connecter.";
+        header("Location: connexion.php"); // Rediriger vers la page de connexion
+        exit(); // Assurer la redirection
     } else {
-        // Insérer les données dans la base de données
-        $sql = "INSERT INTO utilisateurs (prenom, nom, email, password) 
-                VALUES (:prenom, :nom, :email, :password)";
-        $stmt = $pdo->prepare($sql);
-
-        if ($stmt->execute([':prenom' => $prenom, ':nom' => $nom, ':email' => $email, ':password' => $password])) {
-            echo "Inscription réussie !";
-        } else {
-            echo "Erreur lors de l'inscription.";
-        }
+        echo "Erreur: " . $stmt->error;
     }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>

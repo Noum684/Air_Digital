@@ -1,29 +1,35 @@
-<?php
-session_start(); // Démarrer la session
-include('config.php'); // Inclusion de la connexion à la base de données
+<?php // Démarrer la session
+include('database.php'); // Inclusion de la connexion à la base de données
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Vérifier si l'utilisateur existe
-    $sql = "SELECT * FROM utilisateurs WHERE email = :email";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':email' => $email]);
-    $user = $stmt->fetch();
+    // Rechercher l'utilisateur dans la base de données
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($user && password_verify($password, $user['password'])) {
-        // Les identifiants sont corrects, on démarre une session
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['prenom'] = $user['prenom'];
-        $_SESSION['nom'] = $user['nom'];
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
 
-        echo "Connexion réussie ! Bienvenue " . $_SESSION['prenom'];
-        // Rediriger vers une page protégée (ex: tableau de bord)
-        header("Location: index.php");
-        exit();
+        // Vérifier le mot de passe
+        if (password_verify($password, $user['password'])) {
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+
+            header("Location: index.php"); // Rediriger vers la page d'accueil
+        } else {
+            echo "Mot de passe incorrect.";
+        }
     } else {
-        echo "Email ou mot de passe incorrect.";
+        echo "Aucun utilisateur trouvé avec cet email.";
     }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>

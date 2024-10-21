@@ -5,10 +5,9 @@ $user = 'root';       // Nom d'utilisateur de la base de données
 $pass = '';           // Mot de passe de la base de données
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-    // Mode d'erreur PDO pour afficher les exceptions
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Erreur de connexion : " . $e->getMessage();
+    $bdd= new PDO('mysql:host=localhost;dbname=formulaire;charset=utf8;','root','');
+} 
+catch (Exception $e) {
+    die('Une erreur a été trouvée:'.$e->getMessage());
 }
 ?>

@@ -1,7 +1,6 @@
-<?php  ?>
 <?php
 // Connexion à la base de données
-include('config.php');
+include('database.php');
 
 // Si le formulaire de réservation est soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
