@@ -1,6 +1,9 @@
-<?php // Démarrer la session
-include('database.php'); // Inclusion de la connexion à la base de données
-
+<?php 
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$dbname = "travel";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -18,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérifier le mot de passe
         if (password_verify($password, $user['password'])) {
             session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+            $_SESSION['prenom'] = $user['prenom'];
+            $_SESSION['nom'] = $user['nom'];
 
             header("Location: index.php"); // Rediriger vers la page d'accueil
         } else {
